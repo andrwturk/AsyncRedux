@@ -1,0 +1,545 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CABC593F2AE47799008111C7 /* AsyncReduxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */; };
+		CABC59412AE47799008111C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59402AE47799008111C7 /* ContentView.swift */; };
+		CABC59432AE4779A008111C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABC59422AE4779A008111C7 /* Assets.xcassets */; };
+		CABC59462AE4779A008111C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABC59452AE4779A008111C7 /* Preview Assets.xcassets */; };
+		CABC59592AE4789B008111C7 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59582AE4789B008111C7 /* ChatView.swift */; };
+		CABC595B2AE47DBC008111C7 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595A2AE47DBC008111C7 /* ChatPresenter.swift */; };
+		CABC595D2AE47E4D008111C7 /* ChatStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595C2AE47E4D008111C7 /* ChatStateReducer.swift */; };
+		CABC59602AE47E88008111C7 /* FetchMessagesActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595F2AE47E88008111C7 /* FetchMessagesActionCreator.swift */; };
+		CABC59632AE47F93008111C7 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = CABC59622AE47F93008111C7 /* AsyncAlgorithms */; };
+		CABC596B2AE47FCF008111C7 /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC596A2AE47FCF008111C7 /* MessagesRepository.swift */; };
+		CABC596D2AE48CBD008111C7 /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC596C2AE48CBD008111C7 /* ChatMessageView.swift */; };
+		CABC59702AE490B0008111C7 /* AsyncRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABC59532AE477AF008111C7 /* AsyncRedux.framework */; };
+		CABC59712AE490B0008111C7 /* AsyncRedux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CABC59532AE477AF008111C7 /* AsyncRedux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CABC59752AE491F6008111C7 /* ChatState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59742AE491F6008111C7 /* ChatState.swift */; };
+		CABC59772AE4920D008111C7 /* ChatAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59762AE4920D008111C7 /* ChatAction.swift */; };
+		CABC59792AE49230008111C7 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59782AE49230008111C7 /* ChatMessage.swift */; };
+		CABC597F2AE49300008111C7 /* ChatViewStateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC597E2AE49300008111C7 /* ChatViewStateItem.swift */; };
+		CABC59852AE49419008111C7 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59842AE49419008111C7 /* MessageInputView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CABC59522AE477AF008111C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CABC594C2AE477AF008111C7 /* AsyncRedux.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CABC590C2AE4764B008111C7;
+			remoteInfo = AsyncRedux;
+		};
+		CABC59562AE477AF008111C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CABC594C2AE477AF008111C7 /* AsyncRedux.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CABC59132AE4764B008111C7;
+			remoteInfo = AsyncReduxTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CABC59722AE490B0008111C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CABC59712AE490B0008111C7 /* AsyncRedux.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CABC593B2AE47799008111C7 /* AsyncReduxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncReduxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncReduxAppApp.swift; sourceTree = "<group>"; };
+		CABC59402AE47799008111C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CABC59422AE4779A008111C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CABC59452AE4779A008111C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CABC594C2AE477AF008111C7 /* AsyncRedux.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AsyncRedux.xcodeproj; path = ../../AsyncRedux.xcodeproj; sourceTree = "<group>"; };
+		CABC59582AE4789B008111C7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		CABC595A2AE47DBC008111C7 /* ChatPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPresenter.swift; sourceTree = "<group>"; };
+		CABC595C2AE47E4D008111C7 /* ChatStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStateReducer.swift; sourceTree = "<group>"; };
+		CABC595F2AE47E88008111C7 /* FetchMessagesActionCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMessagesActionCreator.swift; sourceTree = "<group>"; };
+		CABC596A2AE47FCF008111C7 /* MessagesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRepository.swift; sourceTree = "<group>"; };
+		CABC596C2AE48CBD008111C7 /* ChatMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageView.swift; sourceTree = "<group>"; };
+		CABC59742AE491F6008111C7 /* ChatState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatState.swift; sourceTree = "<group>"; };
+		CABC59762AE4920D008111C7 /* ChatAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAction.swift; sourceTree = "<group>"; };
+		CABC59782AE49230008111C7 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		CABC597E2AE49300008111C7 /* ChatViewStateItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewStateItem.swift; sourceTree = "<group>"; };
+		CABC59842AE49419008111C7 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CABC59382AE47799008111C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABC59702AE490B0008111C7 /* AsyncRedux.framework in Frameworks */,
+				CABC59632AE47F93008111C7 /* AsyncAlgorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CABC59322AE47799008111C7 = {
+			isa = PBXGroup;
+			children = (
+				CABC594C2AE477AF008111C7 /* AsyncRedux.xcodeproj */,
+				CABC593D2AE47799008111C7 /* AsyncReduxApp */,
+				CABC593C2AE47799008111C7 /* Products */,
+				CABC596E2AE4909B008111C7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CABC593C2AE47799008111C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CABC593B2AE47799008111C7 /* AsyncReduxApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CABC593D2AE47799008111C7 /* AsyncReduxApp */ = {
+			isa = PBXGroup;
+			children = (
+				CABC597B2AE49269008111C7 /* UI */,
+				CABC597A2AE4924A008111C7 /* Presentaion */,
+				CABC59732AE491D9008111C7 /* Model */,
+				CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */,
+				CABC59422AE4779A008111C7 /* Assets.xcassets */,
+				CABC59442AE4779A008111C7 /* Preview Content */,
+			);
+			path = AsyncReduxApp;
+			sourceTree = "<group>";
+		};
+		CABC59442AE4779A008111C7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CABC59452AE4779A008111C7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CABC594D2AE477AF008111C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CABC59532AE477AF008111C7 /* AsyncRedux.framework */,
+				CABC59572AE477AF008111C7 /* AsyncReduxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CABC595E2AE47E72008111C7 /* ActionCreators */ = {
+			isa = PBXGroup;
+			children = (
+				CABC595F2AE47E88008111C7 /* FetchMessagesActionCreator.swift */,
+			);
+			path = ActionCreators;
+			sourceTree = "<group>";
+		};
+		CABC596E2AE4909B008111C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CABC59732AE491D9008111C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CABC597D2AE49291008111C7 /* Repository */,
+				CABC595E2AE47E72008111C7 /* ActionCreators */,
+				CABC595C2AE47E4D008111C7 /* ChatStateReducer.swift */,
+				CABC59762AE4920D008111C7 /* ChatAction.swift */,
+				CABC59742AE491F6008111C7 /* ChatState.swift */,
+				CABC59782AE49230008111C7 /* ChatMessage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CABC597A2AE4924A008111C7 /* Presentaion */ = {
+			isa = PBXGroup;
+			children = (
+				CABC595A2AE47DBC008111C7 /* ChatPresenter.swift */,
+				CABC597E2AE49300008111C7 /* ChatViewStateItem.swift */,
+			);
+			path = Presentaion;
+			sourceTree = "<group>";
+		};
+		CABC597B2AE49269008111C7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CABC59402AE47799008111C7 /* ContentView.swift */,
+				CABC597C2AE49275008111C7 /* Chat */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CABC597C2AE49275008111C7 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				CABC59582AE4789B008111C7 /* ChatView.swift */,
+				CABC596C2AE48CBD008111C7 /* ChatMessageView.swift */,
+				CABC59842AE49419008111C7 /* MessageInputView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		CABC597D2AE49291008111C7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CABC596A2AE47FCF008111C7 /* MessagesRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CABC593A2AE47799008111C7 /* AsyncReduxApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CABC59492AE4779A008111C7 /* Build configuration list for PBXNativeTarget "AsyncReduxApp" */;
+			buildPhases = (
+				CABC59372AE47799008111C7 /* Sources */,
+				CABC59382AE47799008111C7 /* Frameworks */,
+				CABC59392AE47799008111C7 /* Resources */,
+				CABC59722AE490B0008111C7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsyncReduxApp;
+			packageProductDependencies = (
+				CABC59622AE47F93008111C7 /* AsyncAlgorithms */,
+			);
+			productName = AsyncReduxApp;
+			productReference = CABC593B2AE47799008111C7 /* AsyncReduxApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CABC59332AE47799008111C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					CABC593A2AE47799008111C7 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = CABC59362AE47799008111C7 /* Build configuration list for PBXProject "AsyncReduxApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CABC59322AE47799008111C7;
+			packageReferences = (
+				CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
+			);
+			productRefGroup = CABC593C2AE47799008111C7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CABC594D2AE477AF008111C7 /* Products */;
+					ProjectRef = CABC594C2AE477AF008111C7 /* AsyncRedux.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CABC593A2AE47799008111C7 /* AsyncReduxApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CABC59532AE477AF008111C7 /* AsyncRedux.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AsyncRedux.framework;
+			remoteRef = CABC59522AE477AF008111C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CABC59572AE477AF008111C7 /* AsyncReduxTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AsyncReduxTests.xctest;
+			remoteRef = CABC59562AE477AF008111C7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CABC59392AE47799008111C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABC59462AE4779A008111C7 /* Preview Assets.xcassets in Resources */,
+				CABC59432AE4779A008111C7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CABC59372AE47799008111C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CABC596D2AE48CBD008111C7 /* ChatMessageView.swift in Sources */,
+				CABC59772AE4920D008111C7 /* ChatAction.swift in Sources */,
+				CABC59752AE491F6008111C7 /* ChatState.swift in Sources */,
+				CABC59412AE47799008111C7 /* ContentView.swift in Sources */,
+				CABC59592AE4789B008111C7 /* ChatView.swift in Sources */,
+				CABC59792AE49230008111C7 /* ChatMessage.swift in Sources */,
+				CABC595B2AE47DBC008111C7 /* ChatPresenter.swift in Sources */,
+				CABC59852AE49419008111C7 /* MessageInputView.swift in Sources */,
+				CABC593F2AE47799008111C7 /* AsyncReduxAppApp.swift in Sources */,
+				CABC59602AE47E88008111C7 /* FetchMessagesActionCreator.swift in Sources */,
+				CABC597F2AE49300008111C7 /* ChatViewStateItem.swift in Sources */,
+				CABC595D2AE47E4D008111C7 /* ChatStateReducer.swift in Sources */,
+				CABC596B2AE47FCF008111C7 /* MessagesRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CABC59472AE4779A008111C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CABC59482AE4779A008111C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CABC594A2AE4779A008111C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AsyncReduxApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HY246Z94BP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andriiturkin.AsyncReduxApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CABC594B2AE4779A008111C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AsyncReduxApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HY246Z94BP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andriiturkin.AsyncReduxApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CABC59362AE47799008111C7 /* Build configuration list for PBXProject "AsyncReduxApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABC59472AE4779A008111C7 /* Debug */,
+				CABC59482AE4779A008111C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CABC59492AE4779A008111C7 /* Build configuration list for PBXNativeTarget "AsyncReduxApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CABC594A2AE4779A008111C7 /* Debug */,
+				CABC594B2AE4779A008111C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CABC59622AE47F93008111C7 /* AsyncAlgorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
+			productName = AsyncAlgorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CABC59332AE47799008111C7 /* Project object */;
+}
