@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// 
 public protocol RecursiveActionCreator {
     associatedtype ActionType
     associatedtype StateType

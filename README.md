@@ -1,8 +1,46 @@
 # AsyncRedux
-Lightweight Redux implementation using AsyncSequence
+Lightweight Redux implementation using AsyncSequence.
 
 ## Usage
-If we were to develop the business logic for a messaging application.
+If we were to develop the business logic for a messaging application. 
+
+```swift
+struct ChatView: View {
+    
+    // add Redux stack
+    @EnvironmentObject var stateStorage: StateStorage
+    @State private var newMessage: String = ""
+    @State private var messages: [String] = []
+    
+    var body: some View {
+        VStack {
+            // display messages
+            LazyVStack {
+                ForEach(messages) { message in
+                    Text(message)
+                }
+            }
+            TextField("Enter message...", text: $newMessage)
+            Button {
+                // dispatch `sendMessage` action
+                stateStorage.reduxDispatcher.dispatch(action: .sendMessage(newMessage))
+                newMessage = ""
+            } label: {
+                Text("Send")
+            }
+        }.task {
+            // observe state change in Redux stack and update 
+            for await state in stateStorage.observeState()  {
+                messages = state.messages
+            }
+        }
+    }
+}
+```
+
+## Setup Redux stack
+
+
 
 ```swift
 // Create feature state
@@ -26,7 +64,7 @@ class FetchMessagesActionCreator: RecursiveActionCreator {
                 // define effect for specific state — no messages
                 if state.messages.isEmpty { 
                     // fetch messages from repository
-                    return ChatAction.addMessages([MESSAGES])
+                    return .addMessages([MESSAGES])
                     
                 // skip when messages already loaded
                 } else {
@@ -60,9 +98,5 @@ var storage = StateStorage(
         reduxDispatcher: dispatcher,
         reducer: StateReducer.invoke(state:action:))
 
-// observe state
-for try await state in storage.observeState()  {
-    // update UI
-}        
 
 ``` 

@@ -56,3 +56,5 @@ struct ChatView: View {
     chatPresenter.chatStateItem = .ok(ChatViewItem(messages: messages))
     return ChatView(presenter: chatPresenter)
 }
+
+
