@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CABC593F2AE47799008111C7 /* AsyncReduxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */; };
+		CABC593F2AE47799008111C7 /* AsyncReduxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC593E2AE47799008111C7 /* AsyncReduxApp.swift */; };
 		CABC59412AE47799008111C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59402AE47799008111C7 /* ContentView.swift */; };
 		CABC59432AE4779A008111C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABC59422AE4779A008111C7 /* Assets.xcassets */; };
 		CABC59462AE4779A008111C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CABC59452AE4779A008111C7 /* Preview Assets.xcassets */; };
@@ -60,7 +60,7 @@
 
 /* Begin PBXFileReference section */
 		CABC593B2AE47799008111C7 /* AsyncReduxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsyncReduxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncReduxAppApp.swift; sourceTree = "<group>"; };
+		CABC593E2AE47799008111C7 /* AsyncReduxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncReduxApp.swift; sourceTree = "<group>"; };
 		CABC59402AE47799008111C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CABC59422AE4779A008111C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CABC59452AE4779A008111C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				CABC597B2AE49269008111C7 /* UI */,
 				CABC597A2AE4924A008111C7 /* Presentaion */,
 				CABC59732AE491D9008111C7 /* Model */,
-				CABC593E2AE47799008111C7 /* AsyncReduxAppApp.swift */,
+				CABC593E2AE47799008111C7 /* AsyncReduxApp.swift */,
 				CABC59422AE4779A008111C7 /* Assets.xcassets */,
 				CABC59442AE4779A008111C7 /* Preview Content */,
 			);
@@ -311,7 +311,7 @@
 				CABC59792AE49230008111C7 /* ChatMessage.swift in Sources */,
 				CABC595B2AE47DBC008111C7 /* ChatPresenter.swift in Sources */,
 				CABC59852AE49419008111C7 /* MessageInputView.swift in Sources */,
-				CABC593F2AE47799008111C7 /* AsyncReduxAppApp.swift in Sources */,
+				CABC593F2AE47799008111C7 /* AsyncReduxApp.swift in Sources */,
 				CABC59602AE47E88008111C7 /* FetchMessagesActionCreator.swift in Sources */,
 				CABC597F2AE49300008111C7 /* ChatViewStateItem.swift in Sources */,
 				CABC595D2AE47E4D008111C7 /* ChatStateReducer.swift in Sources */,

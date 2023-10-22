@@ -36,7 +36,6 @@ struct MessageInputView: View {
                     .overlay(Image(systemName: "arrow.up")
                         .fontWeight(.bold)
                         .foregroundColor(.white))
-                
             }.disabled(newMessage.count == 0)
              .padding(.bottom)
         }

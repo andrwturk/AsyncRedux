@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct AsyncReduxAppApp: App {
+struct AsyncReduxApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
