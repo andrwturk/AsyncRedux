@@ -1,10 +1,15 @@
-# AsyncRedux
-Lightweight Redux implementation using AsyncSequence.
+# AsyncRedux — Asynchronous Redux Framework for Swift
 
-## Usage
-If we were to develop the business logic for a messaging application. 
+
+## Introduction
+AsyncRedux is a lightweight, asynchronous Redux framework for Swift. It simplifies state management in your Swift applications. Whether you are using SwiftUI or UIKit, AsyncRedux offers built-in support for action creators, allowing for a clean, easy-to-understand data flow.
+
+## Usage Example
+Here's a complete example that uses AsyncRedux in a SwiftUI application to manage a simple chat view:
 
 ```swift
+import AsyncRedux
+
 struct ChatView: View {
     
     // add Redux stack
@@ -38,9 +43,25 @@ struct ChatView: View {
 }
 ```
 
-## Setup Redux stack
+## Installation
+To install AsyncRedux, you can use Swift Package Manager.
+Add the following line to your Package.swift file:
 
+```swift
+dependencies: [
+    .package(url: "hhttps://github.com/andrwturk/AsyncRedux.git", .upToNextMajor(from: "1.0.0"))
+]
+```
 
+## Setting up core Redux components
+
+After you've installed AsyncRedux, you can quickly get started by importing it:
+
+```swift
+import AsyncRedux
+```
+
+Set up your state and actions:
 
 ```swift
 // Create feature state
@@ -54,7 +75,11 @@ struct Action {
     case fetchMessages([String])
     case sendMessage(String)
 }
+```
 
+Then create action creators and state reducer:
+
+```swift
 class FetchMessagesActionCreator: RecursiveActionCreator {
     
     // implement effect which depends on state and returns action
@@ -86,7 +111,11 @@ final class StateReducer {
         }
     }
 }
+```
 
+Finally, set up dispatcher and state storage:
+
+```swift
 // add dispatcher
 var dispatcher = ReduxDispatcher<State, Action>(
         recursiveActionCreators: [FetchMessagesActionCreator().toAny()],
@@ -100,3 +129,5 @@ var storage = StateStorage(
 
 
 ``` 
+## Contributing
+Your contributions are welcome! Feel free to open issues for feature requests or bug reports, and submit pull requests for new features or fixes. For major changes, it's always good to open an issue first to discuss what you would like to change.
