@@ -11,7 +11,7 @@ import AsyncRedux
 
 struct ChatView: View {
     
-    // add Redux stack
+    // obtain state storage from the environment
     @EnvironmentObject var stateStorage: StateStorage
     @State private var newMessage: String = ""
     @State private var messages: [String] = []
