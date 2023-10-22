@@ -1,6 +1,5 @@
 # AsyncRedux — Asynchronous Redux Framework for Swift
 
-
 ## Introduction
 AsyncRedux is a lightweight, asynchronous Redux framework for Swift. It simplifies state management in your Swift applications. Whether you are using SwiftUI or UIKit, AsyncRedux offers built-in support for action creators, allowing for a clean, easy-to-understand data flow.
 
@@ -129,5 +128,9 @@ var storage = StateStorage(
 
 
 ``` 
+
+## Example App: Building a Chat Application
+In this repository, you will find a complete example application that demonstrates how to build a real-time chat application using the AsyncRedux framework. The example aims to showcase the core features and usage patterns of AsyncRedux in a more complex use-case.
+
 ## Contributing
 Your contributions are welcome! Feel free to open issues for feature requests or bug reports, and submit pull requests for new features or fixes. For major changes, it's always good to open an issue first to discuss what you would like to change.
