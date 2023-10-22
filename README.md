@@ -2,8 +2,7 @@
 Lightweight Redux implementation using AsyncSequence
 
 ## Usage
-
-Let's say we make business logic for chat application
+If we were to develop the business logic for a messaging application.
 
 ```swift
 // Create feature state
