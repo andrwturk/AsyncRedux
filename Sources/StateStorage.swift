@@ -32,7 +32,7 @@ public final class StateStorage<StateType, ActionType> {
                 do {
                     for try await action in self.reduxDispatcher
                                                 .observeAction(stateObservable: AsyncThrowingStream<StateType, Error> { cont in
-                                                    cont.yield(self.currentState)}.typeErased()) {
+                                                    cont.yield(self.currentState)}.toAny()) {
                         let oldState = self.currentState
                         let newState = self.reducer(oldState, action)
                         self.currentState = newState
@@ -43,6 +43,6 @@ public final class StateStorage<StateType, ActionType> {
                     continuation.finish(throwing: error)
                 }
             }
-        }.typeErased()
+        }.toAny()
     }
 }

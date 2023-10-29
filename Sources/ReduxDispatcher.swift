@@ -39,7 +39,7 @@ public class ReduxDispatcher<StateType, ActionType> {
     
     func observeAction(stateObservable: AnyAsyncSequence<StateType>) -> AnyAsyncSequence<ActionType> {
         mergeAsyncSequences(
-            [dispatchActionRelay.stream.typeErased(),
+            [dispatchActionRelay.stream.toAny(),
             mergedRecursiveActionCreatorsActions(stateObservable: stateObservable),
             mergeActionCreators()]
         )

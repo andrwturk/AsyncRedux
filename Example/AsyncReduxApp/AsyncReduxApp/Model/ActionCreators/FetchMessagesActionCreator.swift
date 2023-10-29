@@ -29,6 +29,6 @@ class FetchMessagesActionCreator: RecursiveActionCreator {
                     return nil
                 }
                 
-            }.typeErased()
+            }.toAny()
     }
 }

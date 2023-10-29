@@ -14,7 +14,7 @@ class ChatPresenter: ObservableObject {
     lazy var fetchMessagesActionCreator = FetchMessagesActionCreator(messagesRepository: MessagesRepository())
     
     lazy var dispatcher = ReduxDispatcher<ChatState, ChatAction>(
-        recursiveActionCreators: [fetchMessagesActionCreator.typeErased()],
+        recursiveActionCreators: [fetchMessagesActionCreator.toAny()],
         actionCreators: [])
     
     lazy var storage = StateStorage(

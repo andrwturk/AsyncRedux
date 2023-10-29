@@ -31,5 +31,5 @@ func mergeAsyncSequences<T>(_ streams: [AnyAsyncSequence<T>]) -> AnyAsyncSequenc
                 continuation.finish(throwing: error)
             }
         }
-    }.typeErased()
+    }.toAny()
 }

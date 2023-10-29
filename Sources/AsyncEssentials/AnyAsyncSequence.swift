@@ -50,7 +50,7 @@ public struct AnyAsyncIterator<IteratorElementType>: AsyncIteratorProtocol {
 }
 
 public extension AsyncSequence {
-    func typeErased() -> AnyAsyncSequence<Element> {
+    func toAny() -> AnyAsyncSequence<Element> {
         return AnyAsyncSequence(self)
     }
 }

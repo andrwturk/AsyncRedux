@@ -9,13 +9,13 @@ import Foundation
 
 public extension ActionCreator {
     
-    func typeErased<ErasedActionType>() -> AnyActionCreator<ErasedActionType> where ErasedActionType == ActionType {
+    func toAny<ErasedActionType>() -> AnyActionCreator<ErasedActionType> where ErasedActionType == ActionType {
         return AnyActionCreator<ActionType>(wrappedActionCreator: self)
     }
 }
 
 public extension RecursiveActionCreator {
-    func typeErased<ErasedStateType, ErasedActionType>() -> AnyRecursiveActionCreator<ErasedStateType, ErasedActionType> where ErasedActionType == ActionType,                                                                           ErasedStateType == StateType {
+    func toAny<ErasedStateType, ErasedActionType>() -> AnyRecursiveActionCreator<ErasedStateType, ErasedActionType> where ErasedActionType == ActionType,                                                                           ErasedStateType == StateType {
         return AnyRecursiveActionCreator<StateType, ActionType>(wrappedActionCreator: self)
     }
 }
