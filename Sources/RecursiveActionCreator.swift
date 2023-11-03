@@ -8,9 +8,10 @@
 import Foundation
 
 public protocol RecursiveActionCreator {
+    
     associatedtype ActionType
     associatedtype StateType
     
     /// Generate actions that are influenced by the current state.
-    func observeActions(stateObservable: AnyAsyncSequence<StateType>) -> AnyAsyncSequence<ActionType>
+    func observeActions(stateObservable: AsyncStream<StateType>) -> AsyncStream<ActionType>
 }

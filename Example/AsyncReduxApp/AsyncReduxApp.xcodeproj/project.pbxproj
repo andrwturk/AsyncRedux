@@ -15,7 +15,6 @@
 		CABC595B2AE47DBC008111C7 /* ChatPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595A2AE47DBC008111C7 /* ChatPresenter.swift */; };
 		CABC595D2AE47E4D008111C7 /* ChatStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595C2AE47E4D008111C7 /* ChatStateReducer.swift */; };
 		CABC59602AE47E88008111C7 /* FetchMessagesActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC595F2AE47E88008111C7 /* FetchMessagesActionCreator.swift */; };
-		CABC59632AE47F93008111C7 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = CABC59622AE47F93008111C7 /* AsyncAlgorithms */; };
 		CABC596B2AE47FCF008111C7 /* MessagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC596A2AE47FCF008111C7 /* MessagesRepository.swift */; };
 		CABC596D2AE48CBD008111C7 /* ChatMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC596C2AE48CBD008111C7 /* ChatMessageView.swift */; };
 		CABC59702AE490B0008111C7 /* AsyncRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABC59532AE477AF008111C7 /* AsyncRedux.framework */; };
@@ -84,7 +83,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CABC59702AE490B0008111C7 /* AsyncRedux.framework in Frameworks */,
-				CABC59632AE47F93008111C7 /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +219,6 @@
 			);
 			name = AsyncReduxApp;
 			packageProductDependencies = (
-				CABC59622AE47F93008111C7 /* AsyncAlgorithms */,
 			);
 			productName = AsyncReduxApp;
 			productReference = CABC593B2AE47799008111C7 /* AsyncReduxApp.app */;
@@ -252,7 +249,6 @@
 			);
 			mainGroup = CABC59322AE47799008111C7;
 			packageReferences = (
-				CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 			);
 			productRefGroup = CABC593C2AE47799008111C7 /* Products */;
 			projectDirPath = "";
@@ -521,25 +517,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CABC59622AE47F93008111C7 /* AsyncAlgorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CABC59612AE47F93008111C7 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
-			productName = AsyncAlgorithms;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CABC59332AE47799008111C7 /* Project object */;
 }

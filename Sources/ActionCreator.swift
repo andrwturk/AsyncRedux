@@ -12,10 +12,10 @@ public protocol ActionCreator {
     
     /// Generate an actions that is not tied to the current state.
     ///
-    ///     func observeActions() -> AnyAsyncSequence<ActionType> {
+    ///     func observeActions() -> AsyncStream<ActionType> {
     ///         // fetch data
     ///         return .action(DATA)
     ///     }
     ///
-    func observeActions() -> AnyAsyncSequence<ActionType>
+    func observeActions() -> AsyncStream<ActionType>
 }

@@ -17,7 +17,7 @@ class FetchMessagesActionCreator: RecursiveActionCreator {
         self.messagesRepository = messagesRepository
     }
 
-    func observeActions(stateObservable: AnyAsyncSequence<ChatState>) -> AnyAsyncSequence<ChatAction> {
+    func observeActions(stateObservable: AsyncStream<ChatState>) -> AsyncStream<ChatAction> {
         stateObservable
             .removeDuplicates()
             .compactMap { state -> ChatAction? in
@@ -29,6 +29,6 @@ class FetchMessagesActionCreator: RecursiveActionCreator {
                     return nil
                 }
                 
-            }.toAny()
+            }.toAsyncStream()
     }
 }

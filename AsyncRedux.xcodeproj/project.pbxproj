@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAAB88722AF3B150000E333B /* AsyncStreamTypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB88712AF3B150000E333B /* AsyncStreamTypeErasure.swift */; };
+		CAAB88762AF3B32A000E333B /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = CAAB88752AF3B32A000E333B /* AsyncAlgorithms */; };
+		CAAB88AF2AF54CE4000E333B /* AsyncRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAB88AE2AF54CE4000E333B /* AsyncRelay.swift */; };
 		CABC59142AE4764B008111C7 /* AsyncRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABC590C2AE4764B008111C7 /* AsyncRedux.framework */; };
 		CABC59B42AE53AA1008111C7 /* MergeAsyncSequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AA2AE53AA1008111C7 /* MergeAsyncSequences.swift */; };
 		CABC59B52AE53AA1008111C7 /* StateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AB2AE53AA1008111C7 /* StateStorage.swift */; };
 		CABC59B62AE53AA1008111C7 /* AsyncThrowingRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AC2AE53AA1008111C7 /* AsyncThrowingRelay.swift */; };
 		CABC59B72AE53AA1008111C7 /* RecursiveActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AD2AE53AA1008111C7 /* RecursiveActionCreator.swift */; };
 		CABC59B82AE53AA1008111C7 /* ActionCreatorTypeErasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AE2AE53AA1008111C7 /* ActionCreatorTypeErasure.swift */; };
-		CABC59B92AE53AA1008111C7 /* AnyAsyncSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59AF2AE53AA1008111C7 /* AnyAsyncSequence.swift */; };
 		CABC59BA2AE53AA1008111C7 /* ReduxDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59B02AE53AA1008111C7 /* ReduxDispatcher.swift */; };
 		CABC59BB2AE53AA1008111C7 /* ActionCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABC59B12AE53AA1008111C7 /* ActionCreator.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		CA498FF32AE5443B007D170E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CAAB88712AF3B150000E333B /* AsyncStreamTypeErasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncStreamTypeErasure.swift; sourceTree = "<group>"; };
+		CAAB88AE2AF54CE4000E333B /* AsyncRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRelay.swift; sourceTree = "<group>"; };
 		CABC590C2AE4764B008111C7 /* AsyncRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsyncRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABC59132AE4764B008111C7 /* AsyncReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CABC59AA2AE53AA1008111C7 /* MergeAsyncSequences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MergeAsyncSequences.swift; sourceTree = "<group>"; };
@@ -37,7 +41,6 @@
 		CABC59AC2AE53AA1008111C7 /* AsyncThrowingRelay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncThrowingRelay.swift; sourceTree = "<group>"; };
 		CABC59AD2AE53AA1008111C7 /* RecursiveActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecursiveActionCreator.swift; sourceTree = "<group>"; };
 		CABC59AE2AE53AA1008111C7 /* ActionCreatorTypeErasure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCreatorTypeErasure.swift; sourceTree = "<group>"; };
-		CABC59AF2AE53AA1008111C7 /* AnyAsyncSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyAsyncSequence.swift; sourceTree = "<group>"; };
 		CABC59B02AE53AA1008111C7 /* ReduxDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduxDispatcher.swift; sourceTree = "<group>"; };
 		CABC59B12AE53AA1008111C7 /* ActionCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCreator.swift; sourceTree = "<group>"; };
 		CABC59BC2AE53ACC008111C7 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAB88762AF3B32A000E333B /* AsyncAlgorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +69,10 @@
 		CA498FF22AE5423D007D170E /* AsyncEssentials */ = {
 			isa = PBXGroup;
 			children = (
-				CABC59AF2AE53AA1008111C7 /* AnyAsyncSequence.swift */,
+				CAAB88AE2AF54CE4000E333B /* AsyncRelay.swift */,
 				CABC59AC2AE53AA1008111C7 /* AsyncThrowingRelay.swift */,
 				CABC59AA2AE53AA1008111C7 /* MergeAsyncSequences.swift */,
+				CAAB88712AF3B150000E333B /* AsyncStreamTypeErasure.swift */,
 			);
 			path = AsyncEssentials;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 				CABC59A92AE53AA1008111C7 /* Sources */,
 				CABC59A52AE53AA1008111C7 /* Tests */,
 				CAA02B612A4EE057001C690B /* Products */,
+				CAAB88742AF3B32A000E333B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +96,13 @@
 				CABC59132AE4764B008111C7 /* AsyncReduxTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CAAB88742AF3B32A000E333B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CABC59A52AE53AA1008111C7 /* Tests */ = {
@@ -139,6 +152,9 @@
 			dependencies = (
 			);
 			name = AsyncRedux;
+			packageProductDependencies = (
+				CAAB88752AF3B32A000E333B /* AsyncAlgorithms */,
+			);
 			productName = AsyncRedux;
 			productReference = CABC590C2AE4764B008111C7 /* AsyncRedux.framework */;
 			productType = "com.apple.product-type.framework";
@@ -190,6 +206,7 @@
 			);
 			mainGroup = CAA02B572A4EE057001C690B;
 			packageReferences = (
+				CAAB88732AF3B31F000E333B /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 			);
 			productRefGroup = CAA02B612A4EE057001C690B /* Products */;
 			projectDirPath = "";
@@ -224,10 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CABC59BB2AE53AA1008111C7 /* ActionCreator.swift in Sources */,
-				CABC59B92AE53AA1008111C7 /* AnyAsyncSequence.swift in Sources */,
 				CABC59BA2AE53AA1008111C7 /* ReduxDispatcher.swift in Sources */,
+				CAAB88722AF3B150000E333B /* AsyncStreamTypeErasure.swift in Sources */,
 				CABC59B62AE53AA1008111C7 /* AsyncThrowingRelay.swift in Sources */,
 				CABC59B42AE53AA1008111C7 /* MergeAsyncSequences.swift in Sources */,
+				CAAB88AF2AF54CE4000E333B /* AsyncRelay.swift in Sources */,
 				CABC59B52AE53AA1008111C7 /* StateStorage.swift in Sources */,
 				CABC59B82AE53AA1008111C7 /* ActionCreatorTypeErasure.swift in Sources */,
 				CABC59B72AE53AA1008111C7 /* RecursiveActionCreator.swift in Sources */,
@@ -522,6 +540,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAAB88732AF3B31F000E333B /* XCRemoteSwiftPackageReference "swift-async-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-async-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAAB88752AF3B32A000E333B /* AsyncAlgorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAAB88732AF3B31F000E333B /* XCRemoteSwiftPackageReference "swift-async-algorithms" */;
+			productName = AsyncAlgorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CAA02B582A4EE057001C690B /* Project object */;
 }

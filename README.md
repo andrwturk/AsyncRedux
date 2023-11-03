@@ -82,7 +82,7 @@ Then create action creators and state reducer:
 class FetchMessagesActionCreator: RecursiveActionCreator {
     
     // implement effect which depends on state and returns action
-    func observeActions(stateObservable: AnyAsyncSequence<State>) -> AnyAsyncSequence<Action> {
+    func observeActions(stateObservable: AsyncStream<State>) -> AsyncStream<Action> {
             stateObservable
             .compactMap { state -> ChatAction? in
                 // define effect for specific state — no messages
@@ -94,7 +94,7 @@ class FetchMessagesActionCreator: RecursiveActionCreator {
                 } else {
                     return nil
                 }
-            }.toAny()
+            }.toAsyncStream()
     }
 }
 

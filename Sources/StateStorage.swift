@@ -7,13 +7,14 @@
 
 import Foundation
 
+@available(iOS 13.0, *)
 public final class StateStorage<StateType, ActionType> {
     
     public let reduxDispatcher: ReduxDispatcher<StateType, ActionType>
-    
     private let initialState: StateType
     private let reducer: (StateType, ActionType) -> StateType
     private var currentState: StateType
+    private let currentStateRelay = AsyncRelay<StateType>()
     
     public init(
         initialState: StateType,
@@ -24,25 +25,22 @@ public final class StateStorage<StateType, ActionType> {
         self.currentState = initialState
         self.reduxDispatcher = reduxDispatcher
         self.reducer = reducer
+        self.currentStateRelay.accept(initialState)
     }
     
-    public func observeState() -> AnyAsyncSequence<StateType> {
-        return AsyncThrowingStream { continuation in
+    public func observeState() -> AsyncStream<StateType> {
+        AsyncStream { continuation in
             Task {
-                do {
-                    for try await action in self.reduxDispatcher
-                                                .observeAction(stateObservable: AsyncThrowingStream<StateType, Error> { cont in
-                                                    cont.yield(self.currentState)}.toAny()) {
-                        let oldState = self.currentState
-                        let newState = self.reducer(oldState, action)
-                        self.currentState = newState
-                        continuation.yield(newState)
-                    }
-                    continuation.finish()
-                } catch {
-                    continuation.finish(throwing: error)
+                for try await action in self.reduxDispatcher
+                    .observeAction(stateObservable: currentStateRelay.stream) {
+                    let oldState = self.currentState
+                    let newState = self.reducer(oldState, action)
+                    self.currentState = newState
+                    self.currentStateRelay.accept(currentState)
+                    continuation.yield(newState)
                 }
+                continuation.finish()
             }
-        }.toAny()
+        }
     }
 }

@@ -15,6 +15,7 @@ public extension ActionCreator {
 }
 
 public extension RecursiveActionCreator {
+    
     func toAny<ErasedStateType, ErasedActionType>() -> AnyRecursiveActionCreator<ErasedStateType, ErasedActionType> where ErasedActionType == ActionType,                                                                           ErasedStateType == StateType {
         return AnyRecursiveActionCreator<StateType, ActionType>(wrappedActionCreator: self)
     }
@@ -24,14 +25,14 @@ public final class AnyActionCreator<WrappedActionType>: ActionCreator {
    
     public typealias ActionType = WrappedActionType
     
-    private let wrappedObserveActions: () -> AnyAsyncSequence<WrappedActionType>
+    private let wrappedObserveActions: () -> AsyncStream<WrappedActionType>
     
     init<WrappedActionCreator: ActionCreator>(wrappedActionCreator: WrappedActionCreator)
         where WrappedActionCreator.ActionType == WrappedActionType {
             wrappedObserveActions = { wrappedActionCreator.observeActions() }
     }
     
-    public func observeActions() -> AnyAsyncSequence<ActionType> {
+    public func observeActions() -> AsyncStream<ActionType> {
         return wrappedObserveActions()
     }
 }
@@ -41,15 +42,14 @@ public final class AnyRecursiveActionCreator<WrappedStateType, WrappedActionType
     public typealias StateType = WrappedStateType
     public typealias ActionType = WrappedActionType
     
-    private let wrappedObserveActions: (AnyAsyncSequence<WrappedStateType>) -> AnyAsyncSequence<WrappedActionType>
+    private let wrappedObserveActions: (AsyncStream<WrappedStateType>) -> AsyncStream<WrappedActionType>
     
     init<WrappedActionCreator: RecursiveActionCreator>(wrappedActionCreator: WrappedActionCreator)
         where WrappedActionCreator.ActionType == WrappedActionType, WrappedStateType == WrappedActionCreator.StateType {
             wrappedObserveActions = { wrappedActionCreator.observeActions(stateObservable: $0) }
     }
     
-    public func observeActions(stateObservable: AnyAsyncSequence<StateType>) -> AnyAsyncSequence<ActionType> {
+    public func observeActions(stateObservable: AsyncStream<StateType>) -> AsyncStream<ActionType> {
         return wrappedObserveActions(stateObservable)
     }
-    
 }

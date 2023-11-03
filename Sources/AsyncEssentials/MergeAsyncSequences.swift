@@ -7,29 +7,21 @@
 
 import Foundation
 
-func mergeAsyncSequences<T>(_ streams: [AnyAsyncSequence<T>]) -> AnyAsyncSequence<T> {
-    AsyncThrowingStream { continuation in
+func mergeAsyncSequences<T>(_ streams: [AsyncStream<T>]) -> AsyncStream<T> {
+    AsyncStream { continuation in
         Task {
-            do {
-                try await withThrowingTaskGroup(of: Void.self) { group in
-                    for stream in streams {
-                        group.addTask {
-                            do {
-                                for try await item in stream {
-                                    continuation.yield(item)
-                                }
-                            } catch {
-                                continuation.finish(throwing: error)
-                            }
+            await withTaskGroup(of: Void.self) { group in
+                for stream in streams {
+                    group.addTask {
+                        for await item in stream {
+                            continuation.yield(item)
                         }
                     }
-                    
-                    try await group.waitForAll()
                 }
+                
+                await group.waitForAll()
                 continuation.finish()
-            } catch {
-                continuation.finish(throwing: error)
             }
         }
-    }.toAny()
+    }
 }

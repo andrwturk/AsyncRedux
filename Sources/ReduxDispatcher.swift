@@ -9,9 +9,10 @@ import Foundation
 
 /// Dispatch actions to modify state
 public class ReduxDispatcher<StateType, ActionType> {
+    
     private let recursiveActionCreators: [AnyRecursiveActionCreator<StateType, ActionType>]
     private let actionCreators: [AnyActionCreator<ActionType>]
-    private let dispatchActionRelay = AsyncThrowingRelay<ActionType>()
+    private let dispatchActionRelay = AsyncRelay<ActionType>()
     
     public init(
         recursiveActionCreators: [AnyRecursiveActionCreator<StateType, ActionType>],
@@ -25,21 +26,21 @@ public class ReduxDispatcher<StateType, ActionType> {
         dispatchActionRelay.accept(action)
     }
     
-    private func mergedRecursiveActionCreatorsActions(stateObservable: AnyAsyncSequence<StateType>) -> AnyAsyncSequence<ActionType> {
+    private func mergedRecursiveActionCreatorsActions(stateObservable: AsyncStream<StateType>) -> AsyncStream<ActionType> {
         mergeAsyncSequences(recursiveActionCreators.map { creator in
             creator.observeActions(stateObservable: stateObservable)
         })
     }
     
-    private func mergeActionCreators() -> AnyAsyncSequence<ActionType> {
+    private func mergeActionCreators() -> AsyncStream<ActionType> {
         mergeAsyncSequences(actionCreators.map { actionCreator in
             actionCreator.observeActions()
         })
     }
     
-    func observeAction(stateObservable: AnyAsyncSequence<StateType>) -> AnyAsyncSequence<ActionType> {
+    func observeAction(stateObservable: AsyncStream<StateType>) -> AsyncStream<ActionType> {
         mergeAsyncSequences(
-            [dispatchActionRelay.stream.toAny(),
+            [dispatchActionRelay.stream,
             mergedRecursiveActionCreatorsActions(stateObservable: stateObservable),
             mergeActionCreators()]
         )
